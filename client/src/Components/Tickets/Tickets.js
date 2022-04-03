@@ -34,7 +34,7 @@ const Tickets = ({ buyTickets, setBuyTickets }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/tickets/info")
+      .get("https://whitechocolate.herokuapp.com/api/tickets/info")
       .then((response) => setProduct(response.data));
   }, []);
 

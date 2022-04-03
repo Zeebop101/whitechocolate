@@ -18,7 +18,7 @@ function SuccessView() {
   useEffect(() => {
     executeScroll();
     axios
-      .get("http://localhost:5000/api/tickets/get-latest-ticket")
+      .get("https://whitechocolate.herokuapp.com/api/tickets/get-latest-ticket")
       .then((response) => setData(response.data));
   }, []);
   return (

@@ -10,7 +10,7 @@ const AdminLoginView = () => {
 
   const handleLogin = () => {
     axios
-      .post("http://localhost:5000/api/admins/login", {
+      .post("https://whitechocolate.herokuapp.com/api/admins/login", {
         username: username,
         password: password,
       })

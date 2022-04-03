@@ -25,7 +25,7 @@ function GuestCodeHandle(
     document.getElementById("lastname").value = "";
     document.getElementById("email").value = "";
     axios
-      .post("http://localhost:5000/api/guest/add", {
+      .post("https://whitechocolate.herokuapp.com/api/guest/add", {
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -35,7 +35,7 @@ function GuestCodeHandle(
       .then((response) => {
         if (response.status === 200) {
           axios
-            .post("http://localhost:5000/api/guest/send-email", {
+            .post("https://whitechocolate.herokuapp.com/api/guest/send-email", {
               _id: response.data._id,
               firstName: firstName,
               lastName: lastName,

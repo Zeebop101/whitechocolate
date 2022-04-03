@@ -18,7 +18,7 @@ const Events00 = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/events/get-all").then((response) => {
+    axios.get("https://whitechocolate.herokuapp.com/api/events/get-all").then((response) => {
       setAllEvents(response.data);
     });
   }, []);
@@ -30,7 +30,7 @@ const Events00 = () => {
     formData.append("location", location);
     formData.append("file", file);
     axios
-      .post("http://localhost:5000/api/events/add", formData, {
+      .post("https://whitechocolate.herokuapp.com/api/events/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -42,7 +42,7 @@ const Events00 = () => {
 
   const handleAddAdmin = () => {
     axios
-      .post("http://localhost:5000/api/admins/add", {
+      .post("https://whitechocolate.herokuapp.com/api/admins/add", {
         name: name,
         username: username,
         password: password,

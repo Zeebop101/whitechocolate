@@ -12,7 +12,7 @@ import "./Stripe.scss";
 import axios from "axios";
 
 function CheckOutHandle(order, firstName, lastName, checked) {
-  // axios.post("http://localhost:5000/api/tickets/add", {
+  // axios.post("https://whitechocolate.herokuapp.com/api/tickets/add", {
   //   firstName: firstName,
   //   lastName: lastName,
   //   regular: order.find((item) => (item.id === 1 ? item.quantity : 0)),
@@ -23,7 +23,7 @@ function CheckOutHandle(order, firstName, lastName, checked) {
 
   if (firstname.value != "" && lastname.value != "" && checked === true) {
     toast.loading("Bis gleich.");
-    fetch("http://localhost:5000/create-checkout-session", {
+    fetch("https://whitechocolate.herokuapp.com/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
