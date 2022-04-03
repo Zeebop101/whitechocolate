@@ -1,0 +1,34 @@
+$breakpoints: (
+  smallest: 200px,
+  supersmall: 400px,
+  small: 480px,
+  smallmid: 600px,
+  midsmall: 800px,
+  midmedium: 1000px,
+  medium: 1200px,
+  midlarge: 1500px,
+  large: 2000px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.navigation {
+  width: 100%;
+  height: 4.5rem;
+  display: grid;
+  position: fixed;
+  // position: absolute;
+  bottom: 0;
+  background-color: #000000;
+  z-index: 99;
+
+  &-burger {
+    justify-self: center;
+    align-self: center;
+  }
+}

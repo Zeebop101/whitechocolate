@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}
+
+$breakpoints: (
+  smallest: 200px,
+  supersmall: 400px,
+  small: 480px,
+  smallmid: 600px,
+  midsmall: 800px,
+  midmedium: 1000px,
+  medium: 1200px,
+  midlarge: 1500px,
+  large: 2000px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.customerName {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  input {
+    padding: 1rem 2rem;
+    width: 20.375rem;
+    height: 3.5rem;
+
+    backdrop-filter: blur(5rem);
+    background-color: #171717;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: white;
+    margin-top: 1.5rem;
+  }
+}
+
+// .validation-green {
+//   border: 3px solid green;
+// }
+
+// .validation-red {
+//   border: 3px solid red;
+// }

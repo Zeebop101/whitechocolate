@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 1.75rem;
+  scroll-behavior: smooth;
+}
+
+input {
+  background: transparent;
+  border-radius: 1.75rem;
+}
+
+input::placeholder {
+  color: white;
+  font-weight: 400;
+  background: transparent;
+}
+
+.validation-green {
+  border: 0.23rem solid rgb(3, 87, 3);
+}
+
+.validation-red {
+  border: 0.23rem solid rgb(101, 7, 7);
+}
+
+.validation-none {
+  border: 0.1rem solid white;
+}

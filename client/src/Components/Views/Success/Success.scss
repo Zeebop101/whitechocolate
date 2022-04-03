@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}
+
+html {
+  background-color: black;
+}
+
+$breakpoints: (
+  smallest: 200px,
+  supersmall: 400px,
+  small: 480px,
+  smallmid: 600px,
+  midsmall: 800px,
+  midmedium: 1000px,
+  medium: 1200px,
+  midlarge: 1500px,
+  large: 2000px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.success {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+  grid-gap: 2rem;
+  font-family: "Manrope";
+  color: white;
+  width: 100%;
+  height: 26rem;
+  background: rgb(0, 122, 26);
+  padding: 1.5rem;
+  text-align: left;
+  align-content: center;
+
+  &-header {
+    font-weight: 600;
+  }
+
+  &-amount {
+    display: grid;
+    grid-gap: 0.5rem;
+  }
+
+  &-footer {
+    display: grid;
+    grid-gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  &-button {
+    padding: 1rem 2rem;
+    width: 20.375rem;
+    height: 3.5rem;
+    background: #ffffff;
+    backdrop-filter: blur(1rem);
+    border-radius: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: #000000;
+    justify-self: center;
+  }
+}

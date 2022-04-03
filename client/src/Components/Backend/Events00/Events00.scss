@@ -1,0 +1,110 @@
+.events00 {
+  background-color: lightblue;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  &-overview {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(min-content, max-content));
+    justify-content: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+
+  &-date {
+    width: 3.25rem;
+    height: 3.875rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    display: grid;
+  }
+
+  &-date:hover {
+    background-color: #f6bdbd;
+  }
+
+  &-month {
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    align-self: end;
+  }
+
+  &-day {
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-add {
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 0.75rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &-data {
+    padding-top: 2rem;
+    display: grid;
+    grid-gap: 1rem;
+
+    &-date,
+    &-title,
+    &-location {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+
+      p {
+        text-align: end;
+        padding-right: 0.5rem;
+      }
+
+      input {
+        width: 70%;
+      }
+    }
+
+    &-comedian {
+      display: grid;
+      justify-content: center;
+      grid-gap: 1rem;
+    }
+
+    &-single-comedian {
+      display: grid;
+      margin-bottom: 0.5rem;
+      grid-gap: 0.5rem;
+      align-items: center;
+      grid-template-columns: repeat(2, minmax(min-content, max-content));
+    }
+  }
+}
+
+.deejay-image,
+.comedian-image {
+  margin-right: 1rem;
+}
+
+.deejay-single,
+.comedian-single {
+  display: grid;
+  margin-bottom: 0.5rem;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+}
+
+.deejay-name,
+.comedian-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* identical to box height, or 150% */
+
+  color: #ffffff;
+}

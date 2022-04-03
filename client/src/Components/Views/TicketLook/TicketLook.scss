@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}
+
+html {
+  background-color: black;
+}
+
+$breakpoints: (
+  smallest: 200px,
+  supersmall: 400px,
+  small: 480px,
+  smallmid: 600px,
+  midsmall: 800px,
+  midmedium: 1000px,
+  medium: 1200px,
+  midlarge: 1500px,
+  large: 2000px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.ticketlook {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  width: 18.75rem;
+  height: 34.375rem;
+  background: #000000;
+  border-radius: 1.75rem;
+  background: radial-gradient(
+    100.52% 93.01% at 0% 0%,
+    #d39f6a 0%,
+    rgba(75, 41, 73, 0) 100%
+  );
+
+  &-logo {
+    padding-top: 4rem;
+  }
+
+  &-title {
+    display: grid;
+    color: white;
+    padding-top: 2.278rem;
+    padding-bottom: 4.625rem;
+
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+
+    p:nth-child(1) {
+      font-size: 1.625rem;
+      line-height: 2.813rem;
+      font-weight: 700;
+    }
+
+    p:nth-child(2) {
+      font-size: 2.75rem;
+      line-height: 2.813rem;
+      font-weight: 700;
+    }
+  }
+
+  &-qr {
+    width: 9.375rem;
+    height: 9.375rem;
+  }
+}

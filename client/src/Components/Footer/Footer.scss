@@ -1,0 +1,66 @@
+$breakpoints: (
+  smallest: 200px,
+  supersmall: 400px,
+  small: 480px,
+  smallmid: 600px,
+  midsmall: 800px,
+  midmedium: 1000px,
+  medium: 1200px,
+  midlarge: 1500px,
+  large: 2000px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.footer {
+  display: grid;
+  justify-content: center;
+  grid-gap: 1rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  background-color: #000;
+
+  &-wc-logo {
+    width: 5rem;
+    justify-self: center;
+    margin-bottom: 5rem;
+  }
+
+  &-fyped-logo {
+    justify-self: center;
+    width: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  &-links {
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-items: center;
+    width: 100%;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &-impressum,
+  &-datenschutz,
+  &-agb {
+    background: none;
+    color: white;
+    border: none;
+  }
+
+  &-datenschutz {
+  }
+
+  &-agb {
+  }
+}
